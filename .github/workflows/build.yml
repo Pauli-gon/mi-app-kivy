@@ -1,0 +1,24 @@
+name: Compilar App Android
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+
+      - name: Compilar con Buildozer
+        uses: Artemis28/buildozer-action@v1
+        with:
+          command: buildozer -v android release
+          buildozer_version: master
+
+      - name: Subir artefacto AAB
+        uses: actions/upload-artifact@v3
+        with:
+          name: MiApp-Android
+          path: bin/*.aab
