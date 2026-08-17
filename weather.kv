@@ -1,0 +1,118 @@
+#:import dp kivy.metrics.dp
+
+BoxLayout:
+    orientation: "vertical"
+    padding: dp(20)
+    spacing: dp(10)
+
+    canvas.before:
+        Color:
+            rgba: 0.04, 0.10, 0.20, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        text: "MI CLIMA"
+        font_size: dp(30)
+        bold: True
+        color: 1, 1, 1, 1
+        size_hint_y: None
+        height: dp(50)
+
+    Label:
+        id: nombre_ciudad
+        text: "Busca una ciudad"
+        font_size: dp(23)
+        color: 0.75, 0.88, 1, 1
+        size_hint_y: None
+        height: dp(40)
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(55)
+        spacing: dp(10)
+
+        TextInput:
+            id: ciudad
+            hint_text: "Escribe una ciudad"
+            font_size: dp(18)
+            multiline: False
+
+        Button:
+            text: "BUSCAR"
+            font_size: dp(17)
+            bold: True
+            size_hint_x: None
+            width: dp(110)
+            on_release: app.consultar_clima()
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(190)
+        spacing: dp(20)
+
+        BoxLayout:
+            id: icono_actual
+            size_hint_x: None
+            width: dp(170)
+
+        BoxLayout:
+            orientation: "vertical"
+
+            Label:
+                text: "TEMPERATURA"
+                font_size: dp(16)
+                color: 0.65, 0.80, 1, 1
+
+            Label:
+                id: temperatura
+                text: "-- °C"
+                font_size: dp(45)
+                bold: True
+                color: 1, 1, 1, 1
+
+            Label:
+                text: "Humedad"
+                font_size: dp(15)
+                color: 0.65, 0.80, 1, 1
+
+            Label:
+                id: humedad
+                text: "--%"
+                font_size: dp(18)
+                color: 1, 1, 1, 1
+
+            Label:
+                text: "Viento"
+                font_size: dp(15)
+                color: 0.65, 0.80, 1, 1
+
+            Label:
+                id: viento
+                text: "-- km/h"
+                font_size: dp(18)
+                color: 1, 1, 1, 1
+
+    Label:
+        text: "PRONÓSTICO 7 DÍAS"
+        font_size: dp(21)
+        bold: True
+        color: 1, 1, 1, 1
+        size_hint_y: None
+        height: dp(45)
+
+    ScrollView:
+        do_scroll_x: True
+        do_scroll_y: False
+        bar_width: 0
+
+        BoxLayout:
+            id: pronostico
+            orientation: "horizontal"
+            spacing: dp(12)
+            padding: dp(5)
+            size_hint_x: None
+            width: self.minimum_width
+            size_hint_y: None
+            height: dp(180)

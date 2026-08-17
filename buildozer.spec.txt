@@ -1,0 +1,37 @@
+[app]
+
+# (str) Title of your application
+title = Mi App
+
+# (str) Package name
+package.name = miapp
+
+# (str) Package domain (needed for android/ios packaging)
+package.domain = org.test
+
+# (str) Source code where the main.py live
+source.dir = .
+
+# (list) Source files to include (let empty to include all the files)
+source.include_exts = py,png,jpg,kv,atlas
+
+# (str) Application versioning (method 1)
+version =El archivo **`buildozer.spec`** se genera automáticamente cuando inicializas el proyecto o lo puedes descargar de tu propio entorno de Google Colab donde estuviste trabajando antes.
+
+Tienes dos opciones muy sencillas para tenerlo listo:
+
+**Opción 1: Descargarlo desde tu Google Colab (Si ya hiciste el proceso anterior)**
+1. Abre tu libreta de Google Colab donde ejecutaste los comandos de Buildozer.
+2. En la barra lateral izquierda, haz clic en el icono de la **carpeta (`📁`)**.
+3. En la lista de archivos verás uno llamado **`buildozer.spec`**.
+4. Haz clic derecho sobre él o presiona los tres puntos verticales al lado del nombre y selecciona **Descargar**.
+
+---
+
+**Opción 2: Crear uno nuevo directamente en tu computadora**
+Si no tienes el archivo a la mano, crea un documento de texto en tu computadora:
+1. Abre el Bloc de notas (o tu editor de código).
+2. Crea un archivo nuevo y guárdalo exactamente con el nombre: **`buildozer.spec`**
+3. Si prefieres generar la plantilla oficial por defecto, puedes ejecutar en cualquier consola o celda de código de Colab el comando:
+   ```bash
+   !buildozer init
